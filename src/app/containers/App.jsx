@@ -25,6 +25,10 @@ import Header from '../components/Header';
 import IntlProvider from '../components/IntlProvider';
 import MissedPage from '../components/MissedPage';
 import SearchParamsConfigurator from '../components/SearchParamsConfigurator';
+import MoviesPage from 'pageProviders/Movies';
+import MovieDetailPage from 'pageProviders/MovieDetail';
+import ProducersPage from 'pageProviders/Producers';
+import ProducerDetailPage from 'pageProviders/ProducerDetail';
 
 function App() {
   const dispatch = useDispatch();
@@ -58,9 +62,7 @@ function App() {
         <ThemeProvider>
           <BrowserRouter>
             <SearchParamsConfigurator />
-            {/* This is needed to let first render passed for App's
-              * configuration process will be finished (e.g. locationQuery
-              * initializing) */}
+
             {state.componentDidMount && (
               <IntlProvider>
                 <Header onLogout={() => dispatch(actionsUser.fetchSignOut())} />
@@ -114,6 +116,22 @@ function App() {
                       path={`${pageURLs[pages.login]}`}
                     />
                     <Route
+                        element={<ProducersPage />}
+                        path={`${pageURLs[pages.producersList]}`}
+                    />
+                    <Route
+                        element={<ProducerDetailPage />}
+                        path={`${pageURLs[pages.producerDetail]}/:id`}
+                    />
+                    <Route
+                        element={<MoviesPage />}
+                        path={`${pageURLs[pages.moviesList]}`}
+                    />
+                    <Route
+                        element={<MovieDetailPage />}
+                        path="/movie/:id"
+                    />
+                    <Route
                       element={(
                         <MissedPage
                           redirectPage={`${pageURLs[pages.defaultPage]}`}
@@ -121,6 +139,7 @@ function App() {
                       )}
                       path="*"
                     />
+
                   </Routes>
                 )}
               </IntlProvider>
