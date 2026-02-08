@@ -19,5 +19,7 @@
   "signUp.error.EMPTY_SIGN_UP_PASSWORD": "Password can't be empty",
   "signUp.error.EMPTY_SIGN_UP_PASSWORD_CONFIRM": "Confirm password can't be empty",
   "signUp.error.INVALID_EMAIL": "Invalid email format",
-  "signUp.error.PASSWORDS_MISMATCHES": "Password was not confirmed"
+  "signUp.error.PASSWORDS_MISMATCHES": "Password was not confirmed",
+  "page.movies": "Movies"
+
 }

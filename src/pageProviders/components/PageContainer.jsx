@@ -14,7 +14,6 @@ const getClasses = createUseStyles((theme) => ({
     overflowY: 'auto',
   },
   content: {
-    background: theme.pageContainer.content.color.background,
     display: 'flex',
     flexDirection: 'column',
     maxWidth: theme.pageContainer.content.width,
@@ -24,6 +23,8 @@ const getClasses = createUseStyles((theme) => ({
     display: 'flex',
     overflowX: 'auto',
     justifyContent: 'center',
+    background: theme.pageContainer.content.color.background,
+    minHeight: '100%',
     width: '100%',
   },
   fullWidth: {
